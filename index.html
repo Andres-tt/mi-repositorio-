@@ -1,0 +1,127 @@
+c<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Quieres ser mi San Valentín?</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff4e7a,#ff9eb5);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.container{
+    background: rgba(255,255,255,0.15);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+input{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    margin:10px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 20px;
+    margin:10px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yesBtn{
+    background:#ff1e56;
+    color:white;
+}
+
+#noBtn{
+    background:#333;
+    color:white;
+    position:absolute;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.heart{
+    font-size:50px;
+    margin-top:20px;
+    animation: latido 1s infinite;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💖 Carta de San Valentín 💖</h1>
+    
+    <p>Escribe tu nombre:</p>
+    <input type="text" id="name" placeholder="Tu nombre aquí">
+    <br>
+    <button onclick="preguntar()">Continuar</button>
+    
+    <div id="pregunta" style="display:none;">
+        <h2 id="mensaje"></h2>
+        <button id="yesBtn" onclick="aceptar()">Sí 💕</button>
+        <button id="noBtn">No ❌</button>
+    </div>
+
+    <div id="final" style="display:none;">
+        <div class="heart">❤️</div>
+        <h2>Nunca dudes de lo mucho que te amo</h2>
+    </div>
+</div>
+
+<script>
+function preguntar(){
+    let nombre = document.getElementById("name").value;
+    if(nombre.trim() === ""){
+        alert("Escribe tu nombre primero 💕");
+        return;
+    }
+
+    document.getElementById("mensaje").innerText =
+        nombre + ", ¿Quieres ser mi San Valentín?";
+    
+    document.getElementById("pregunta").style.display = "block";
+}
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function(){
+    noBtn.style.top = Math.random() * window.innerHeight + "px";
+    noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+function aceptar(){
+    document.getElementById("pregunta").style.display = "none";
+    document.getElementById("final").style.display = "block";
+}
+</script>
+
+</body>
+</html>
