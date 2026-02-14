@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Quieres ser mi San Valentín?</title>
+<title>Para el Amor de mi Vida 🤍</title>
 
 <style>
 body{
@@ -17,6 +17,7 @@ body{
     align-items:center;
     text-align:center;
     color:white;
+    overflow:hidden;
 }
 
 .container{
@@ -25,7 +26,8 @@ body{
     border-radius:20px;
     backdrop-filter: blur(10px);
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    max-width:600px;
+    max-width:650px;
+    z-index:2;
 }
 
 input{
@@ -47,8 +49,9 @@ button{
 }
 
 #yesBtn{
-    background:#ff1e56;
-    color:white;
+    background:#ffffff;
+    color:#ff1e56;
+    font-weight:bold;
 }
 
 #noBtn{
@@ -62,7 +65,7 @@ button:hover{
 }
 
 .heart{
-    font-size:60px;
+    font-size:70px;
     margin-top:20px;
     animation: latido 1s infinite;
 }
@@ -78,13 +81,32 @@ button:hover{
     line-height:1.6;
     font-size:16px;
 }
+
+/* Corazones flotando */
+.corazon{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation: flotar 5s linear infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform: translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform: translateY(-10vh);
+        opacity:0;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>💖 Carta de San Valentín 💖</h1>
+    <h1>🤍 Carta Especial 🤍</h1>
     
     <p>Escribe tu nombre:</p>
     <input type="text" id="name" placeholder="Tu nombre aquí">
@@ -93,14 +115,14 @@ button:hover{
     
     <div id="pregunta" style="display:none;">
         <h2 id="mensaje"></h2>
-        <button id="yesBtn" onclick="aceptar()">Sí 💕</button>
+        <button id="yesBtn" onclick="aceptar()">Sí 🤍</button>
         <button id="noBtn">No ❌</button>
     </div>
 
     <div id="final" style="display:none;">
-        <div class="heart">❤️</div>
+        <div class="heart">🤍</div>
         <div class="mensaje-final">
-            Mi princesa, hay tantas cosas bonitas que quisiera decirte y darte, pero no sé cómo expresarme, porque tú te mereces todo lo bonito que tiene este mundo. Ese 3 de enero marcó un antes y un después en mi vida, porque desde ese día no imaginé amarte tanto como lo hago hoy. Xiomi, amor, cuando yo te digo que te amo no lo digo en broma, te lo digo muy en serio. Cada día que pasa y te conozco más, me doy cuenta de que no quiero a nadie más en mi vida. Amor, soy el hombre más feliz a tu lado y prometo respetarte y hacerte la mujer más feliz de este mundo. Te amo mucho.
+            Amor de mí vida, mientras estás a mi lado voy a dar lo mejor de mí, voy a amarte a mí manera, así intenso, exagerado, real, sin amarte a medias, y si amar así es amar demasiado, entonces quiero que sepas que siempre te voy a amar, a mí estilo, DEMASIADOO, toda mi vida y por siempre 🤍. Porque yo a tí te amo a rato, por siempre y para siempre, en tú días buenos, y en tus días no tan buenos, en tús alegrías, y en tú silencios, y no cambiará nada de lo que siento por tí, por nada ni por nadie, porque amar así como te amo a tí, es lo más real que he sentido en mí vida. Sentir esto que siento por tí le da sentido a mí vida y por eso te lo digo: cada instante en el que tengo el privilegio de verte, en una foto o en un vídeo, es lo más hermoso que pueden observar mis ojos. Nunca dejarás de gustarme tanto como me gustas, y te lo juro sin miedo y con todo el corazón: te elijo hoy, mañana, siempre y toda mí vida 🤍.
         </div>
     </div>
 </div>
@@ -109,28 +131,4 @@ button:hover{
 function preguntar(){
     let nombre = document.getElementById("name").value;
     if(nombre.trim() === ""){
-        alert("Escribe tu nombre primero 💕");
-        return;
-    }
-
-    document.getElementById("mensaje").innerText =
-        nombre + ", ¿Quieres ser mi San Valentín?";
-    
-    document.getElementById("pregunta").style.display = "block";
-}
-
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", function(){
-    noBtn.style.top = Math.random() * window.innerHeight + "px";
-    noBtn.style.left = Math.random() * window.innerWidth + "px";
-});
-
-function aceptar(){
-    document.getElementById("pregunta").style.display = "none";
-    document.getElementById("final").style.display = "block";
-}
-</script>
-
-</body>
-</html>
+        alert("Escribe tu nombre primero 🤍")
