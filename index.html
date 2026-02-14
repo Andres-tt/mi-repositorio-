@@ -1,4 +1,4 @@
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -25,6 +25,7 @@ body{
     border-radius:20px;
     backdrop-filter: blur(10px);
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    max-width:600px;
 }
 
 input{
@@ -61,7 +62,7 @@ button:hover{
 }
 
 .heart{
-    font-size:50px;
+    font-size:60px;
     margin-top:20px;
     animation: latido 1s infinite;
 }
@@ -70,6 +71,12 @@ button:hover{
     0%{transform:scale(1);}
     50%{transform:scale(1.2);}
     100%{transform:scale(1);}
+}
+
+.mensaje-final{
+    margin-top:20px;
+    line-height:1.6;
+    font-size:16px;
 }
 </style>
 </head>
@@ -92,7 +99,9 @@ button:hover{
 
     <div id="final" style="display:none;">
         <div class="heart">❤️</div>
-        <h2>Nunca dudes de lo mucho que te amo</h2>
+        <div class="mensaje-final">
+            Mi princesa, hay tantas cosas bonitas que quisiera decirte y darte, pero no sé cómo expresarme, porque tú te mereces todo lo bonito que tiene este mundo. Ese 3 de enero marcó un antes y un después en mi vida, porque desde ese día no imaginé amarte tanto como lo hago hoy. Xiomi, amor, cuando yo te digo que te amo no lo digo en broma, te lo digo muy en serio. Cada día que pasa y te conozco más, me doy cuenta de que no quiero a nadie más en mi vida. Amor, soy el hombre más feliz a tu lado y prometo respetarte y hacerte la mujer más feliz de este mundo. Te amo mucho.
+        </div>
     </div>
 </div>
 
@@ -125,4 +134,3 @@ function aceptar(){
 
 </body>
 </html>
-
